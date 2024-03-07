@@ -1,4 +1,4 @@
-- name: DotFiles config
+- name: Dotfiles config
   hosts: local
 
   vars_files:
