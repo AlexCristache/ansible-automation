@@ -1,0 +1,9 @@
+- name: DotFiles config
+  hosts: local
+
+  vars_files:
+     - ./vars/secrets.yaml
+  roles:
+    - role: zsh
+      tags:
+        - tools

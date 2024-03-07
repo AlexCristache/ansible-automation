@@ -1,0 +1,31 @@
+- name: Install zsh | apt
+  become: true
+  become_user: root
+  apt:
+    name: zsh
+    state: present
+
+- name: Install curl | apt
+  become: true
+  become_user: root
+  apt:
+    name: curl
+    state: present
+
+- name: Set zsh as default shell for user | command
+  become: true
+  become_user: root
+  command: chsh -s /bin/zsh {{ lookup('ansible.builtin.env', 'USR') }}
+  register: zsh_for_user
+  failed_when: zsh_for_user.rc >= 1
+  changed_when: zsh_for_user == 0
+
+- name: Checks for oh-my-zsh installation | stat
+  stat:
+    path: "{{ lookup('env', 'HOME') }}/.oh-my-zsh"
+  register: oh_my_zsh_stat
+
+- name: Installs oh-my-zsh | raw
+  raw: 'sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"'
+  when: not oh_my_zsh_stat.stat.exists
+
