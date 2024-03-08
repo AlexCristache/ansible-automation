@@ -1,4 +1,4 @@
-- name: Install System Packages (build-essential, cmake, pkg-config, pthread)
+- name: Install System Packages (coreutils, build-essential, cmake, pkg-config, pthread)
   become: true
   ansible.builtin.package:
     name:
@@ -6,17 +6,18 @@
       - cmake
       - pkg-config
       - libpthread-stubs0-dev
+      - coreutils
 
-- name: Install System Packages (golang, lua, unzip, libtool, libtool-bin, gettext)
+- name: Install System Packages (lua, unzip, libtool, libtool-bin, gettext, git)
   become: true
   ansible.builtin.package:
     name:
-      - golang
       - lua5.1
       - unzip
       - libtool
       - libtool-bin
       - gettext
+      - git
 
 - name: Install Clang
   become: true
