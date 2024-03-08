@@ -7,3 +7,9 @@
     - role: zsh
       tags:
         - tools
+    - role: nvim
+      tags:
+        - tools
+    - role: core
+      tags:
+        - tools
