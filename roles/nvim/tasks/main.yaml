@@ -19,6 +19,15 @@
     - install
     - neovim
 
+- name: Neovim | Plugin dev
+  become: true
+  ansible.builtin.package:
+    - luarocks
+
+- name: Neovim | Plugin dev
+  become: true
+  shell: luarocks install luacheck
+
 - name: Neovim | Config folder
   ansible.builtin.file:
     mode: "0755"
