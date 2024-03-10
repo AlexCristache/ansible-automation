@@ -2,6 +2,10 @@
 
 set -e
 
+if ! [ -x "$(command -v ansible)" ]; then
+    sudo apt install -y ansible
+fi
+
 PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 
 ansible-playbook --diff --check\

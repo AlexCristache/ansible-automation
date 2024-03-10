@@ -16,3 +16,6 @@
     - role: asdf
       tags:
         - tools
+    - role: ssh
+      tags:
+        -core
