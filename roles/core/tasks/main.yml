@@ -23,4 +23,4 @@
 - name: Install Clang
   become: true
   ansible.builtin.package:
-    name: ["clang", "clang-11", "clang-12", "clangd-11", "clangd-12"]
+    name: ["clang", "clang-11", "clang-12", "clangd", "clangd-11", "clangd-12"]
