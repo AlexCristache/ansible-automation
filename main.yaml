@@ -6,16 +6,16 @@
   roles:
     - role: zsh
       tags:
-        - tools
+        - zsh
     - role: nvim
       tags:
-        - tools
+        - nvim
     - role: core
       tags:
-        - tools
+        - core
     - role: asdf
       tags:
-        - tools
+        - languages
     - role: ssh
       tags:
-        -core
+        - ssh
