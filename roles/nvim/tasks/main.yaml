@@ -19,15 +19,6 @@
     - install
     - neovim
 
-- name: Neovim | Plugin dev
-  become: true
-  ansible.builtin.package:
-    - luarocks
-
-- name: Neovim | Plugin dev
-  become: true
-  shell: luarocks install luacheck
-
 - name: Neovim | Config folder
   ansible.builtin.file:
     mode: "0755"
@@ -45,3 +36,15 @@
   ansible.builtin.git:
     repo: 'https://github.com/wbthomason/packer.nvim'
     dest: "{{ lookup('env', 'HOME') }}/.local/share/nvim/site/pack/packer/start/packer.nvim"
+
+- name: Plugin dev
+  become: true
+  ansible.builtin.package:
+    name:
+      - luarocks
+  tags:
+    - nvim
+
+- name: Neovim | Plugin dev 2
+  become: true
+  shell: luarocks install luacheck
