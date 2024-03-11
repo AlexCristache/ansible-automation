@@ -100,8 +100,8 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 export EDITOR=nvim
-export ASDF_DIR=/home/alex/.asdf
-export XDG_CONFIG_HOME=/home/alex/.config
+export ASDF_DIR=/home/$USER/.asdf
+export XDG_CONFIG_HOME=/home/$USER/.config
 alias vim="nvim"
 export GOPATH=$HOME/go
 export PATH=~/.asdf/shims:$PATH
@@ -111,3 +111,4 @@ export PATH=~/.cargo/bin:$PATH
 export PATH=~/go/bin:$PATH
 export PATH=/usr/local/go/bin:$PATH
 export PATH=~/.local/bin/:$PATH
+export GOROOT=~/.asdf/installs/golang/$(asdf latest golang)/go

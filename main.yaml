@@ -16,6 +16,9 @@
     - role: asdf
       tags:
         - languages
+    - role: rust
+      tags:
+        - languages
     - role: ssh
       tags:
         - ssh

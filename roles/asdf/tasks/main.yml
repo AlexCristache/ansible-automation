@@ -3,6 +3,10 @@
     repo: https://github.com/asdf-vm/asdf.git
     dest: ~/.asdf
 
-- name: Install GO
+- name: Add GO plugin
   ansible.builtin.shell:
     cmd: asdf plugin add golang https://github.com/asdf-community/asdf-golang.git
+
+- name: Install GO
+  ansible.builtin.shell:
+    cmd: asdf install golang latest && asdf reshim golang latest && asdf global golang latest
