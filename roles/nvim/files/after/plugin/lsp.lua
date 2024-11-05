@@ -14,7 +14,7 @@ lsp.configure('lua-language-server', {
     settings = {
         Lua = {
             diagnostics = {
-                globals = { 'vim' }
+                globals = { 'vim', }
             }
         }
     }

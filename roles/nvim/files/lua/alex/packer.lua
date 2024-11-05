@@ -5,14 +5,20 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
   use {
-	  'nvim-telescope/telescope.nvim', tag = '0.1.5',
+	  'nvim-telescope/telescope.nvim', tag = '0.1.2',
 	  -- or                            , branch = '0.1.x',
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
 
   use {"rebelot/kanagawa.nvim", as = "kanagawa" }
   use { "catppuccin/nvim", as = "catppuccin" }
-  use {'AlexvZyl/nordic.nvim', as = "nordic"}
+  use {'neanias/everforest-nvim', as = "everforest"}
+  use {'shaunsingh/nord.nvim', as="nord"}
+  use {'nyoom-engineering/oxocarbon.nvim'}
+  use {'folke/tokyonight.nvim', as = "tokyonight"}
+  use {'AlexvZyl/nordic.nvim'}
+  use {'olivercederborg/poimandres.nvim', as="poimandres"}
+  use {'projekt0n/github-nvim-theme'}
   use 'echasnovski/mini.nvim'
 
   use "lukas-reineke/indent-blankline.nvim"

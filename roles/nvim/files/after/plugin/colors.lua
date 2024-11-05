@@ -1,10 +1,14 @@
 require('rose-pine').setup({
-    disable_background = true
+    disable_background = false,
+    styles = {
+        italic = false
+    }
 })
---require("tokyonight").setup({
---    style = "night",
---    transparent = false,
---})
+require("tokyonight").setup({
+    style = "night",
+    transparent = false,
+})
+
 require('kanagawa').setup({
     --theme = "dragon",
     colors = {
@@ -22,21 +26,26 @@ require('kanagawa').setup({
     --transparent_bg = true
 })
 
-require("nordic").setup({
-    --disable_background = true,
-    transparent_bg = true
-})
+--require("nordic").setup({
+--    --disable_background = true,
+--    --transparent_bg = false
+--})
 
 require('catppuccin').setup({
-    transparent_background = true
+    transparent_background = false
 })
 
+require('poimandres').setup({
+
+})
 
 function Color(color)
     --color = color or "nordic"
-    --color = color or "rose-pine-moon"
+    --color = color or "oxocarbon"
+    color = color or "github_dark_default"
     --color = color or "catppuccin"
-    color = color or 'kanagawa-dragon'
+    --color = color or 'kanagawa-dragon'
+    vim.opt.background = "dark"
     vim.cmd.colorscheme(color)
 
     vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
